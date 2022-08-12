@@ -99,7 +99,7 @@ def update_music(id):
     Music.update(request.form)
     return redirect('/dashboard')
 
-@app.route('/music/<int:id>/delete')
+@app.route('/music/delete/<int:id>')
 def delete(id):
     music_data = {
         'id' : id

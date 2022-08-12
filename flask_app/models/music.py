@@ -50,8 +50,8 @@ class Music:
             'last_name': row['last_name'],
             'email': row['email'],
             'password': row['password'],
-            'created_at': row['users.created_at'],
-            'updated_at': row['users.updated_at']
+            'created_at': row['created_at'],
+            'updated_at': row['updated_at']
         }
         user = User(user_data)
         music.user = user
