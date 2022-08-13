@@ -16,19 +16,19 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <h1>Welcome {{user.first_name}}!</h1>
+    <div class="nav-bar d-flex align-items-center justify-content-around">
+        <h1>Welcome {{user.first_name}}!</h1>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="upper mx-auto w-50 bg-warning">
         <h3> Search a Song</h3>
         <form action="/search" method="POST">
             <input name="search_term" type="text">
             <button type="submit">Submit</button>
         </form>
-    <div class="upper">
-            <a href="/logout">Logout</a>
-        <div class="position-relative top-75 start-10">
         <h4>Your Playlist:</h4>
-        </div>
         {% for track in musics %}
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{track.track}}?utm_source=generator" width="1000px" height="90px" allowfullscreen="" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" ></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{track.track}}?utm_source=generator" width="800px" height="90px" allowfullscreen="" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" ></iframe>
             {% if musics.user_id == user_id %}
                 <a href="/music/delete/{{track.id}}">Delete</a>
             {% endif %}
