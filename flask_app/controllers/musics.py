@@ -11,6 +11,8 @@ from pprint import pprint
 
 @app.route('/dashboard')
 def user_dashboard():
+    if "user_id" not in session:
+        return redirect('/')
     user_data = {
         'id' : session['user_id']
     }
