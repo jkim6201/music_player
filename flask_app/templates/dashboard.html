@@ -18,9 +18,9 @@
     {% endwith %}
     <div class="nav-bar d-flex align-items-center justify-content-around">
         <h1>Welcome {{user.first_name}}!</h1>
-        <a href="/logout">Logout</a>
+        <a href="/logout"><button>logout</button></a>
     </div>
-    <div class="upper mx-auto w-50 bg-warning">
+    <div class="upper mx-auto w-50 bg-primary p-3">
         <h3> Search a Song</h3>
         <form action="/search" method="POST">
             <input name="search_term" type="text">
@@ -30,7 +30,7 @@
         {% for track in musics %}
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{track.track}}?utm_source=generator" width="800px" height="90px" allowfullscreen="" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" ></iframe>
             {% if musics.user_id == user_id %}
-                <a href="/music/delete/{{track.id}}">Delete</a>
+                <a href="/music/delete/{{track.id}}"><button>Delete</button></a>
             {% endif %}
         {% endfor %}
     </div>   
